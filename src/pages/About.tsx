@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Heart, HeartHandshake, Users } from 'lucide-react';
+import img1 from '../assets/images/img1.jpeg';
 
 export default function About() {
   const values = [
@@ -63,7 +64,7 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src="assets/images/img1.jpeg"
+              src={img1}
               alt="אחוזת מאיר שרה"
               className="relative z-10 rounded-[2rem] shadow-xl"
               referrerPolicy="no-referrer"

@@ -1,20 +1,27 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Maximize2 } from 'lucide-react';
+import img1 from '../assets/images/img1.jpeg';
+import img2 from '../assets/images/img2.jpeg';
+import img3 from '../assets/images/img3.jpeg';
+import img4 from '../assets/images/img4.jpeg';
+import img5 from '../assets/images/img5.jpeg';
+import img6 from '../assets/images/img6.jpeg';
+import img7 from '../assets/images/img7.jpeg';
+import img8 from '../assets/images/img8.jpeg';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-
 const images = [
-  { url: 'assets/images/img1.jpeg', title: 'סלון מרווח', category: 'פנים' },
-  { url: 'assets/images/img2.jpeg', title: 'פינת ישיבה', category: 'מיתוג' },
-  { url: 'assets/images/img3.jpeg', title: 'חדר אוכל', category: 'דיגיטל' },
-  { url: 'assets/images/img4.jpeg', title: 'אולם', category: 'אדריכלות' },
-  { url: 'assets/images/img5.jpeg', title: 'חצר אירועים', category: 'צילום' },
-  { url: 'assets/images/img6.jpeg', title: 'גינת הוילה', category: 'דיגיטל' },
-  { url: 'assets/images/img7.jpeg', title: 'חצר הוילה', category: 'פנים' },
-  { url: 'assets/images/img8.jpeg', title: 'סלון', category: 'דיגיטל' },
+  { url: img1, title: 'סלון מרווח', category: 'פנים' },
+  { url: img2, title: 'פינת ישיבה', category: 'מיתוג' },
+  { url: img3, title: 'חדר אוכל', category: 'דיגיטל' },
+  { url: img4, title: 'אולם', category: 'אדריכלות' },
+  { url: img5, title: 'חצר אירועים', category: 'צילום' },
+  { url: img6, title: 'גינת הוילה', category: 'דיגיטל' },
+  { url: img7, title: 'חצר הוילה', category: 'פנים' },
+  { url: img8, title: 'סלון', category: 'דיגיטל' },
 ];
   return (
     <div className="min-h-screen bg-orange-50 pt-24">

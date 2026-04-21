@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowLeft, Sparkles, Users, Trees, Home as HomeIcon } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import img8 from '../assets/images/img8.jpeg';
 
 export default function Home() {
   const features = [
@@ -36,7 +37,7 @@ export default function Home() {
       <section className="relative h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="assets/images/img8.jpeg"
+            src={img8}
             alt="Hero background"
             className="w-full h-full object-cover brightness-50"
             referrerPolicy="no-referrer"
