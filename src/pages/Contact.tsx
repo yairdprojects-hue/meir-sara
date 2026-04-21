@@ -2,7 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db, isFirebaseConfigured } from '../firebase';
 
 const SUBJECT_OPTIONS = [
   'שבת חתן עם לינה',
@@ -42,6 +42,13 @@ export default function Contact() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFeedback(null);
+    if (!isFirebaseConfigured || !db) {
+      setFeedback({
+        type: 'err',
+        text: 'שליחת הטופס מהאתר אינה זמינה כרגע (חסרה הגדרת שרת). צרו קשר בטלפון או במייל — הפרטים מופיעים בצד.',
+      });
+      return;
+    }
     setLoading(true);
     try {
       await addDoc(collection(db, 'pniot'), {
@@ -95,6 +102,16 @@ export default function Contact() {
                   }`}
                 >
                   {feedback.text}
+                </div>
+              ) : null}
+
+              {!isFirebaseConfigured ? (
+                <div
+                  className="mb-6 rounded-2xl border border-amber-400 bg-amber-50 px-4 py-3 text-right text-sm text-amber-950"
+                  role="status"
+                >
+                  שליחת טופס מהאתר אינה פעילה כרגע (לא הוגדרו משתני Firebase בבילד). אפשר ליצור קשר בטלפון או
+                  במייל — הפרטים מופיעים בצד.
                 </div>
               ) : null}
 
@@ -170,10 +187,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !isFirebaseConfigured}
                   className="w-full bg-amber-600 hover:bg-amber-700 disabled:opacity-60 disabled:pointer-events-none text-white font-bold py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-amber-900/10 group"
                 >
-                  {loading ? 'שולחים…' : 'לשלוח הודעה'}
+                  {loading ? 'שולחים…' : !isFirebaseConfigured ? 'שליחה לא זמינה' : 'לשלוח הודעה'}
                   <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </form>

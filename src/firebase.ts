@@ -1,27 +1,46 @@
 import { initializeApp, type FirebaseOptions } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, type Firestore } from 'firebase/firestore';
 
-function requireEnv(name: string): string {
-  const v = import.meta.env[name as keyof ImportMetaEnv] as string | undefined;
-  if (v === undefined || String(v).trim() === '') {
-    throw new Error(
-      `חסר משתנה סביבה ${name}. צרו קובץ .env לפי .env.example והשלימו ערכים מ־Firebase Console.`,
-    );
-  }
-  return v.trim();
+function readEnv(name: string): string | undefined {
+  const v = import.meta.env[name as keyof ImportMetaEnv];
+  if (v === undefined || v === null) return undefined;
+  const s = String(v).trim();
+  return s === '' ? undefined : s;
 }
 
-const measurementId = import.meta.env.VITE_FIREBASE_MEASUREMENT_ID?.trim();
+const apiKey = readEnv('VITE_FIREBASE_API_KEY');
+const authDomain = readEnv('VITE_FIREBASE_AUTH_DOMAIN');
+const projectId = readEnv('VITE_FIREBASE_PROJECT_ID');
+const storageBucket = readEnv('VITE_FIREBASE_STORAGE_BUCKET');
+const messagingSenderId = readEnv('VITE_FIREBASE_MESSAGING_SENDER_ID');
+const appId = readEnv('VITE_FIREBASE_APP_ID');
+const measurementId = readEnv('VITE_FIREBASE_MEASUREMENT_ID');
 
-const firebaseConfig: FirebaseOptions = {
-  apiKey: requireEnv('VITE_FIREBASE_API_KEY'),
-  authDomain: requireEnv('VITE_FIREBASE_AUTH_DOMAIN'),
-  projectId: requireEnv('VITE_FIREBASE_PROJECT_ID'),
-  storageBucket: requireEnv('VITE_FIREBASE_STORAGE_BUCKET'),
-  messagingSenderId: requireEnv('VITE_FIREBASE_MESSAGING_SENDER_ID'),
-  appId: requireEnv('VITE_FIREBASE_APP_ID'),
-  ...(measurementId ? { measurementId } : {}),
-};
+const firebaseConfig: FirebaseOptions | null =
+  apiKey && authDomain && projectId && storageBucket && messagingSenderId && appId
+    ? {
+        apiKey,
+        authDomain,
+        projectId,
+        storageBucket,
+        messagingSenderId,
+        appId,
+        ...(measurementId ? { measurementId } : {}),
+      }
+    : null;
 
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export const isFirebaseConfigured = firebaseConfig !== null;
+
+let db: Firestore | null = null;
+if (firebaseConfig) {
+  const app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+}
+
+export { db };
+
+if (import.meta.env.DEV && !isFirebaseConfigured) {
+  console.warn(
+    '[Firebase] חסרים משתני VITE_FIREBASE_* ב־.env — טופס יצירת הקשר לא ישמור ל־Firestore עד שיוגדרו.',
+  );
+}
