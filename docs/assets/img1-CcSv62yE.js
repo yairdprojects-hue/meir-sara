@@ -1,0 +1,1 @@
+var e=`/meir-sara/assets/img1-Dc3o9y92.jpeg`;export{e as t};

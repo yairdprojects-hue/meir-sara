@@ -9,6 +9,8 @@ export default defineConfig(({ mode }) => {
     base: "/meir-sara/",
     plugins: [react(), tailwindcss()],
     build: {
+      outDir: "docs",
+      emptyOutDir: true,
       rollupOptions: {
         output: {
           manualChunks(id) {

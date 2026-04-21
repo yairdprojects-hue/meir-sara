@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# לאחר חיבור דומיין: הוסיפו שורה Sitemap: https://הדומיין-שלכם/sitemap.xml
