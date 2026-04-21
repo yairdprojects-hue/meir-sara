@@ -1,33 +1,33 @@
 import { motion } from 'motion/react';
-import { ArrowLeft, Sparkles, Users, Trees, Home as HomeIcon } from 'lucide-react';
+import { ArrowLeft, Sparkles, Users, Trees, Building2 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import img8 from '../assets/images/img8.jpeg';
 
 export default function Home() {
   const features = [
     {
-      title: 'לינה וחדרים משודרגים',
+      title: 'חדרים מאובזרים ללינה',
       description:
-        'חדרי אירוח מרווחים ומעוצבים, מצוידים היטב — כדי שתירגעו ותתמקדו במשפחה וברגעים המשמעותיים.',
+        'כל הדרוש לשינה נעימה: מצעים, שמיכות, כריות, שירותים ומקלחת, מגבות ומזגנים בכל הבית. מקום לינה עד 26 אנשים — 16 מיטות ו־10 מזרנים.',
       icon: <Sparkles className="h-8 w-8 text-amber-600" />,
     },
     {
-      title: 'שבת חתן, בר מצווה ואירועים',
+      title: 'אולם, חצר וקיבולת',
       description:
-        'מרחב פרטי לשבתות חתן, בר מצווה ואירועי בוטיק — עם ליווי צמוד לתכנון הלוגיסטיקה והחוויה שאתם רוצים.',
-      icon: <Users className="h-8 w-8 text-amber-600" />,
+        'אולם שמכיל עד כ־80 אורחים, וחצר נרחבת שמתאימה לעד כ־100 אורחים לאירוח בחוץ. מטבחון חיצוני מאובזר ושירותים נוחים לאורחים.',
+      icon: <Building2 className="h-8 w-8 text-amber-600" />,
     },
     {
-      title: 'חצר גדולה ומטבח מאובזר',
+      title: 'מטבחים וקומפלקס מלא',
       description:
-        'חצר נרחבת לאירוח ושמחה, ומטבח מלא לשימושכם. האירוח אצלנו ללא סעודנות — אתם מביאים ומכינים לפי הצורך.',
+        'קומפלקס אירוח עם חדרי שינה, מטבחים, אולם וחצר מפנקים — כדי שתארגנו סעודות והכול לפי הצורך שלכם, במקום אחד מסודר.',
       icon: <Trees className="h-8 w-8 text-amber-600" />,
     },
     {
-      title: 'חוויה שלא תשכחו',
+      title: 'שבת חתן, גיבוש ואירועים',
       description:
-        'שילוב של שקט, יוקרה ופרטיות — כדי שהאירוע יישאר בלב שלכם ושל האורחים לשנים הבאות.',
-      icon: <HomeIcon className="h-8 w-8 text-amber-600" />,
+        'מתאים לשבתות חתן ושבתות גיבוש, וגם לאירוע קטן בימי החול — חינה, בר מצווה, יום הולדת ועוד. חתן וכלה יכולים להתארגן לפני האירוע, להשאיר חפצים וללון בנוחות גם אחרי החתונה.',
+      icon: <Users className="h-8 w-8 text-amber-600" />,
     },
   ];
 
@@ -50,13 +50,17 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="mb-6 font-serif text-5xl font-bold leading-tight md:text-7xl">
-              שבת חתן, בר מצווה ואירועים <br />
-              <span className="text-amber-500 italic">עם לינה באחוזה יוקרתית.</span>
+            <h1 className="font-display mb-6 text-4xl font-medium leading-[1.12] tracking-tight text-white drop-shadow-[0_2px_28px_rgba(0,0,0,0.55)] sm:text-5xl sm:leading-[1.1] md:text-6xl lg:text-[4.25rem] lg:leading-[1.08]">
+              בית הארחה{' '}
+              <span className="font-semibold italic text-amber-300">&quot;מאיר שרה&quot;</span>
+              <br />
+              <span className="mt-3 block text-[1.65rem] font-light leading-snug text-stone-100/95 sm:mt-4 sm:text-3xl md:text-4xl">
+                קומפלקס אירוח מושלם ומפנק
+              </span>
             </h1>
             <p className="mb-10 ms-auto max-w-2xl text-lg text-stone-200 md:text-xl">
-              באחוזת מאיר שרה תמצאו לינה נעימה, חדרים משודרגים, חצר גדולה ומטבח מאובזר לשימושכם. האירוח ללא סעודנות
-              — אתם בוחרים איך לארגן את הסעודות. כאן נולדת חוויה משפחתית אמיתית, בשקט ובפרטיות.
+              חדרי שינה, מטבחים, אולם וחצר — הכול מוכן לשבתות חתן, שבתות גיבוש ואירועים משפחתיים. לינה עד 26 אנשים,
+              אולם לכ־80 אורחים וחצר לעד כ־100. שדרות ירושלים 106, נתיבות.
             </p>
             <div className="flex flex-wrap justify-start gap-4">
               <NavLink
@@ -70,7 +74,7 @@ export default function Home() {
                 to="/gallery"
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg transition-all"
               >
-                גלו את האחוזה
+                גלו את בית הארחה
               </NavLink>
             </div>
           </motion.div>
@@ -81,9 +85,9 @@ export default function Home() {
       <section className="bg-orange-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold text-amber-600 uppercase tracking-widest mb-4">למה מאיר שרה?</h2>
+            <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-amber-600">בית הארחה מאיר שרה</h2>
             <p className="font-serif text-3xl font-bold text-stone-900 md:text-4xl">
-              מרחב לשבת חתן, בר מצווה, אירועים ולינה — בנוחות ובסטייל
+              קומפלקס אירוח עם כל מה שצריך — לינה, אולם, חצר ומטבחים
             </p>
           </div>
 
@@ -113,43 +117,52 @@ export default function Home() {
             <div className="w-full min-w-0 pr-6 pt-6 sm:pr-7 sm:pt-7 lg:w-1/2">
               <div className="relative">
                 <img
-                  src="https://picsum.photos/seed/luxury-event/800/600"
+                  src={img8}
                   alt="Villa"
                   className="relative z-10 rounded-3xl shadow-2xl"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute -top-3 -right-3 z-20 flex h-32 w-32 items-center justify-center rounded-full bg-amber-600 p-4 text-center text-sm font-bold text-white shadow-lg sm:-top-4 sm:-right-4 sm:text-base">
-                  12 חדרי אירוח
+                <div className="absolute -top-3 -right-3 z-20 flex h-32 w-32 items-center justify-center rounded-full bg-amber-600 p-3 text-center text-sm font-bold leading-snug text-white shadow-lg sm:-top-4 sm:-right-4 sm:text-base">
+                  לינה עד
+                  <br />
+                  26 איש
                 </div>
                 <div className="absolute -bottom-10 -left-10 w-full h-full border-4 border-amber-200 rounded-3xl -z-0"></div>
               </div>
             </div>
             <div className="w-full min-w-0 text-right lg:w-1/2">
-              <h2 className="text-3xl font-serif font-bold mb-6 text-stone-900">אחוזת מאיר שרה - מרחב הקסום שלכם</h2>
+              <h2 className="mb-6 font-serif text-3xl font-bold text-stone-900">בית הארחה &quot;מאיר שרה&quot;</h2>
               <p className="mb-8 text-lg leading-relaxed text-stone-600">
-                אנחנו פותחים בפניכם אחוזה שמיועדת לשבתות חתן, בר מצווה, אירועים משפחתיים ולינה — עם חדרים משודרגים,
-                חצר גדולה לאירוח ורגעים בחוץ, ומטבח מאובזר לשימושכם בלבד. האירוח אצלנו ללא אוכל מטעמנו: אתם מארגנים
-                את הסעודות וההספקה כפי שמתאים לכם.
+                קומפלקס אירוח מושלם ומפנק עם חדרי שינה, מטבחים, אולם וחצר. החדרים מאובזרים עם כל הדרוש ללינה — מצעים,
+                שמיכות, כריות, שירותים, מקלחת, מגבות ומזגנים בכל הבית. המקום מיועד לשבתות חתן ושבתות גיבוש, עם לינה
+                עד 26 אנשים (16 מיטות ו־10 מזרנים). יש אולם לכ־80 אורחים, מטבחון חיצוני מאובזר, שירותים לאורחים וחצר
+                שמתאימה לעד כ־100 אורחים לאירוח בחוץ. מתאים גם לאירוע קטן בימי החול — חינה, בר מצווה, יום הולדת ועוד.
+                חתן וכלה מוזמנים להתארגן לפני האירוע, להשאיר חפצים וללון בנוחות גם אחרי החתונה. המתחם בשדרות ירושלים
+                106, נתיבות.
               </p>
               <ul className="mb-10 w-full space-y-4 text-right" dir="rtl">
                 <li className="flex items-center justify-start gap-3">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-amber-600" aria-hidden />
-                  <span>שנים עשר חדרים משודרגים ללינה נוחה לאורחים</span>
+                  <span>לינה עד 26 אנשים — 16 מיטות ו־10 מזרנים; ציוד מלא לשינה</span>
                 </li>
                 <li className="flex items-center justify-start gap-3">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-amber-600" aria-hidden />
-                  <span>חצר גדולה ומרווחת — מושלמת לאירוח, קבלת פנים ושמחה</span>
+                  <span>אולם עד כ־80 אורחים; חצר עד כ־100 אורחים; מטבחון חיצוני ושירותים</span>
                 </li>
                 <li className="flex items-center justify-start gap-3">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-amber-600" aria-hidden />
-                  <span>מטבח מאובזר לשימושכם (ללא סעודנות מהאחוזה)</span>
+                  <span>מטבחים במתחם — ארגון הסעודות וההספקה לפי בחירתכם</span>
+                </li>
+                <li className="flex items-center justify-start gap-3">
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-amber-600" aria-hidden />
+                  <span>שדרות ירושלים 106, נתיבות</span>
                 </li>
               </ul>
               <NavLink
                 to="/about"
                 className="inline-flex items-center gap-2 text-amber-900 font-bold hover:gap-4 transition-all"
               >
-                קראו עוד על האחוזה
+                קראו עוד על בית הארחה
                 <ArrowLeft size={20} />
               </NavLink>
             </div>
@@ -160,9 +173,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-amber-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="mb-8 font-serif text-3xl font-bold italic md:text-5xl">רוצים לתכנן שבת חתן, בר מצווה או אירוע?</h2>
+          <h2 className="mb-8 font-serif text-3xl font-bold italic md:text-5xl">רוצים לשריין תאריך בבית הארחה?</h2>
           <p className="mb-12 text-xl opacity-90">
-            השאירו פרטים ונחזור אליכם. נשמח לספר על הלינה, החצר, המטבח והחדרים — ולהתאים את התאריך לצרכים שלכם.
+            השאירו פרטים ונחזור אליכם — נתאים את האירוע לקיבולת האולם, החצר והלינה, ולכל מה שצריך בנתיבות.
           </p>
           <NavLink
             to="/contact"

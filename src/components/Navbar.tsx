@@ -35,7 +35,7 @@ export default function Navbar() {
           <div
             className="mx-auto w-full min-w-0 max-w-full pl-[max(1.5rem,env(safe-area-inset-left,0px))] pr-[max(1.5rem,env(safe-area-inset-right,0px))] sm:pl-[max(1.75rem,env(safe-area-inset-left,0px))] sm:pr-[max(1.75rem,env(safe-area-inset-right,0px))] lg:pl-[max(2rem,env(safe-area-inset-left,0px))] lg:pr-[max(2rem,env(safe-area-inset-right,0px))]"
           >
-            <div className="flex min-w-0 items-center justify-between gap-3 sm:gap-4">
+            <div className="relative flex min-w-0 items-center justify-between gap-3 sm:gap-4">
               <div className="flex min-w-0 shrink-0 items-center">
                 <NavLink
                   to="/"
@@ -51,8 +51,8 @@ export default function Navbar() {
                 </NavLink>
               </div>
 
-              {/* Desktop Menu */}
-              <div className="hidden items-center gap-10 md:flex lg:gap-12">
+              {/* Desktop Menu — ממורכז ברוחב הנאבבר */}
+              <div className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 md:flex lg:gap-12">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.path}
@@ -70,12 +70,12 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Mobile menu button */}
-              <div className="flex shrink-0 items-center md:hidden">
+              {/* Mobile: כפתור | Desktop: רווח מאזן לרוחב הלוגו כדי למרכז ויזואלית את התפריט */}
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center sm:h-16 sm:w-16 md:h-[4.5rem] md:w-[4.5rem]">
                 <button
                   type="button"
                   onClick={() => setIsOpen(!isOpen)}
-                  className="touch-manipulation rounded-xl border-2 border-amber-400/60 bg-amber-100/50 p-2 text-stone-800 shadow-sm transition-colors hover:border-amber-500 hover:bg-amber-200/60 hover:text-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                  className="touch-manipulation rounded-xl border-2 border-amber-400/60 bg-amber-100/50 p-2 text-stone-800 shadow-sm transition-colors hover:border-amber-500 hover:bg-amber-200/60 hover:text-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 md:hidden"
                   aria-expanded={isOpen}
                   aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
                 >

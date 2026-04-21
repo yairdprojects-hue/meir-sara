@@ -9,19 +9,51 @@ import img5 from '../assets/images/img5.jpeg';
 import img6 from '../assets/images/img6.jpeg';
 import img7 from '../assets/images/img7.jpeg';
 import img8 from '../assets/images/img8.jpeg';
+import style1 from '../assets/images/style1.jpeg';
+import style2 from '../assets/images/style2.jpeg';
+import style3 from '../assets/images/style3.jpeg';
+import style4 from '../assets/images/style4.jpeg';
+import style5 from '../assets/images/style5.jpeg';
+import style6 from '../assets/images/style6.jpeg';
+import style7 from '../assets/images/style7.jpeg';
+import style8 from '../assets/images/style8.jpeg';
+import room1 from '../assets/images/room1.jpeg';
+import room2 from '../assets/images/room2.jpeg';
+import room3 from '../assets/images/room3.jpeg';
+import room4 from '../assets/images/room4.jpeg';
+import room5 from '../assets/images/room5.jpeg';
+import room6 from '../assets/images/room6.jpeg';
+import room7 from '../assets/images/room7.jpeg';
+import room8 from '../assets/images/room8.jpeg';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 const images = [
-  { url: img1, title: 'סלון מרווח', category: 'פנים' },
-  { url: img2, title: 'פינת ישיבה', category: 'מיתוג' },
-  { url: img3, title: 'חדר אוכל', category: 'דיגיטל' },
-  { url: img4, title: 'אולם', category: 'אדריכלות' },
-  { url: img5, title: 'חצר אירועים', category: 'צילום' },
-  { url: img6, title: 'גינת הוילה', category: 'דיגיטל' },
-  { url: img7, title: 'חצר הוילה', category: 'פנים' },
-  { url: img8, title: 'סלון', category: 'דיגיטל' },
+  { url: img1, title: 'סלון מרווח', category: 'כללי' },
+  { url: img2, title: 'פינת ישיבה', category: 'כללי' },
+  { url: img3, title: 'חדר אוכל', category: 'כללי' },
+  { url: img4, title: 'אולם', category: 'כללי' },
+  { url: img5, title: 'חצר אירועים', category: 'כללי' },
+  { url: img6, title: 'גינת הוילה', category: 'כללי' },
+  { url: img7, title: 'חצר הוילה', category: 'כללי' },
+  { url: img8, title: 'סלון', category: 'כללי' },
+  { url: style1, title: 'עיצוב', category: 'עיצוב' },
+  { url: style2, title: 'עיצוב', category: 'עיצוב' },
+  { url: style3, title: 'עיצוב', category: 'עיצוב' },
+  { url: style4, title: 'עיצוב', category: 'עיצוב' },
+  { url: style5, title: 'עיצוב', category: 'עיצוב' },
+  { url: style6, title: 'עיצוב', category: 'עיצוב' },
+  { url: style7, title: 'עיצוב', category: 'עיצוב' },
+  { url: style8, title: 'עיצוב', category: 'עיצוב' },
+  { url: room1, title: 'חדר', category: 'חדרים' },
+  { url: room2, title: 'חדר', category: 'חדרים' },
+  { url: room3, title: 'חדר', category: 'חדרים' },
+  { url: room4, title: 'חדר', category: 'חדרים' },
+  { url: room5, title: 'חדר', category: 'חדרים' },
+  { url: room6, title: 'חדר', category: 'חדרים' },
+  { url: room7, title: 'חדר', category: 'חדרים' },
+  { url: room8, title: 'חדר', category: 'חדרים' },
 ];
   return (
     <div className="min-h-screen bg-orange-50 pt-24">
@@ -54,7 +86,7 @@ const images = [
                 <div className="absolute inset-0 bg-stone-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white px-4">
                   <Maximize2 size={32} className="mb-4 text-amber-500" />
                   <h3 className="text-lg font-bold text-center mb-1">{image.title}</h3>
-                  <span className="text-xs uppercase tracking-widest text-amber-200">{image.category}</span>
+                  <span className="text-xs tracking-wide text-amber-200">{image.category}</span>
                 </div>
               </motion.div>
             ))}

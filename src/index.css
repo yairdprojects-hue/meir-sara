@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Assistant", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
+  --font-display: "Frank Ruhl Libre", "Playfair Display", ui-serif, serif;
 }
 
 html {

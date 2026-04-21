@@ -46,9 +46,10 @@ export default function Contact() {
                 <div className="space-y-2 text-right">
                   <label className="text-sm font-bold text-stone-700 mr-2">נושא הפנייה</label>
                   <select className="w-full bg-white border border-stone-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-amber-500 outline-none transition-all appearance-none cursor-pointer">
-                    <option>עיצוב ומיתוג</option>
-                    <option>פיתוח אתר או אפליקציה</option>
-                    <option>ייעוץ עסקי</option>
+                    <option>שבת חתן עם לינה</option>
+                    <option>בר/בת מצווה או אירוע משפחתי</option>
+                    <option>הזמנת תאריכים / סיור במתחם</option>
+                    <option>מידע והצעת מחיר</option>
                     <option>אחר</option>
                   </select>
                 </div>
@@ -80,8 +81,8 @@ export default function Contact() {
                     <MapPin size={24} aria-hidden />
                   </div>
                   <div>
-                    <h3 className="mb-1 text-xl font-bold text-stone-900">המשרד שלנו</h3>
-                    <p className="text-stone-600">רחוב הגשר 12, קומה 4, תל אביב-יפו</p>
+                    <h3 className="mb-1 text-xl font-bold text-stone-900">המיקום שלנו</h3>
+                    <p className="text-stone-600">שדרות ירושלים 106, נתיבות</p>
                   </div>
                 </div>
 
@@ -92,7 +93,7 @@ export default function Contact() {
                   <div>
                     <h3 className="mb-1 text-xl font-bold text-stone-900">טלפון</h3>
                     <p className="text-right text-stone-600" dir="ltr">
-                      050-1234567
+                      050-7336392
                     </p>
                     <p className="text-xs text-stone-400">זמינים בימים א'-ה' בין 09:00 ל-18:00</p>
                   </div>
@@ -105,10 +106,7 @@ export default function Contact() {
                   <div>
                     <h3 className="mb-1 text-xl font-bold text-stone-900">אימייל</h3>
                     <p className="text-right text-stone-600" dir="ltr">
-                      hello@gesher.co.il
-                    </p>
-                    <p className="text-right text-stone-600" dir="ltr">
-                      info@gesher.co.il
+                      nisim12345@gmail.com
                     </p>
                   </div>
                 </div>

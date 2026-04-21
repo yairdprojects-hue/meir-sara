@@ -32,10 +32,10 @@ export default function About() {
             className="mb-8 font-serif text-4xl font-bold text-stone-900 md:text-6xl"
           >
             הסיפור שמאחורי{' '}
-            <span className="text-amber-600 italic">אחוזת מאיר שרה</span>
+            <span className="text-amber-600 italic">בית הארחה מאיר שרה</span>
           </motion.h1>
           <p className="text-xl leading-relaxed text-stone-600">
-            האחוזה נקראת על שם הורינו, <span className="font-semibold text-stone-800">מאיר ושרה</span>
+            בית הארחה נקרא על שם הורינו, <span className="font-semibold text-stone-800">מאיר ושרה</span>
             {' '}שנפטרו מן העולם והשאירו אחריהם דור ישרים מבורך. כל מה שקורה כאן — שבתות חתן, אירוח ושקט —
             עומד על יסוד שהם הטביעו בנו: בית מלא חום, קבלת פנים לבבית ולב פתוח. אנחנו ממשיכים את דרכם מתוך
             אמונה שהאירוח האמיתי נשען על <span className="font-semibold text-amber-800">חסד ונתינה</span>, לכבוד
@@ -53,7 +53,7 @@ export default function About() {
             </h2>
             <p className="mb-6 text-lg leading-relaxed text-stone-600">
               מאיר ושרה חיו חיים של נתינה ושמחה לאחרים. הם לימדו אותנו שבית אינו רק קירות וחדרים — אלא
-              מקום שבו אנשים מרגישים ראויים, שמורים ומחוברים. היום, כשאנחנו פותחים את שערי האחוזה, אנחנו
+              מקום שבו אנשים מרגישים ראויים, שמורים ומחוברים. היום, כשאנחנו פותחים את שערי בית הארחה, אנחנו
               עושים זאת בשם המורשת שלהם ובשם כל מי שממשיך את השושלת.
             </p>
             <p className="text-lg leading-relaxed text-stone-600">
@@ -65,7 +65,7 @@ export default function About() {
           <div className="relative">
             <img
               src={img1}
-              alt="אחוזת מאיר שרה"
+              alt="בית הארחה מאיר שרה"
               className="relative z-10 rounded-[2rem] shadow-xl"
               referrerPolicy="no-referrer"
             />
@@ -76,7 +76,7 @@ export default function About() {
         <div className="mb-16 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold text-stone-900">מה מנחה אותנו היום</h2>
           <p className="mx-auto max-w-2xl text-stone-600">
-            שלושת עמודי התווך שעליהם בנויה האחוזה — ירושה ישירה מדרכם של הורינו.
+            שלושת עמודי התווך שעליהם בנוי בית הארחה — ירושה ישירה מדרכם של הורינו.
           </p>
         </div>
 
