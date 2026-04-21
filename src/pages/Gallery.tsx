@@ -7,14 +7,14 @@ export default function Gallery() {
 
 
 const images = [
-  { url: 'src/assets/images/img1.jpeg', title: 'סלון מרווח', category: 'פנים' },
-  { url: 'src/assets/images/img2.jpeg', title: 'פינת ישיבה', category: 'מיתוג' },
-  { url: 'src/assets/images/img3.jpeg', title: 'חדר אוכל', category: 'דיגיטל' },
-  { url: 'src/assets/images/img4.jpeg', title: 'אולם', category: 'אדריכלות' },
-  { url: 'src/assets/images/img5.jpeg', title: 'חצר אירועים', category: 'צילום' },
-  { url: 'src/assets/images/img6.jpeg', title: 'גינת הוילה', category: 'דיגיטל' },
-  { url: 'src/assets/images/img7.jpeg', title: 'חצר הוילה', category: 'פנים' },
-  { url: 'src/assets/images/img8.jpeg', title: 'סלון', category: 'דיגיטל' },
+  { url: 'assets/images/img1.jpeg', title: 'סלון מרווח', category: 'פנים' },
+  { url: 'assets/images/img2.jpeg', title: 'פינת ישיבה', category: 'מיתוג' },
+  { url: 'assets/images/img3.jpeg', title: 'חדר אוכל', category: 'דיגיטל' },
+  { url: 'assets/images/img4.jpeg', title: 'אולם', category: 'אדריכלות' },
+  { url: 'assets/images/img5.jpeg', title: 'חצר אירועים', category: 'צילום' },
+  { url: 'assets/images/img6.jpeg', title: 'גינת הוילה', category: 'דיגיטל' },
+  { url: 'assets/images/img7.jpeg', title: 'חצר הוילה', category: 'פנים' },
+  { url: 'assets/images/img8.jpeg', title: 'סלון', category: 'דיגיטל' },
 ];
   return (
     <div className="min-h-screen bg-orange-50 pt-24">

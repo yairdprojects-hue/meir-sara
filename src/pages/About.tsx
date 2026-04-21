@@ -63,7 +63,7 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src="src/assets/images/img1.jpeg"
+              src="assets/images/img1.jpeg"
               alt="אחוזת מאיר שרה"
               className="relative z-10 rounded-[2rem] shadow-xl"
               referrerPolicy="no-referrer"
