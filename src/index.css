@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Assistant", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+html {
+  @apply min-h-full overflow-x-clip;
+}
+
+body {
+  direction: rtl;
+  @apply min-h-full overflow-x-clip bg-orange-50 text-gray-900 antialiased;
+}
+
+#root {
+  @apply min-h-full min-w-0 max-w-full overflow-x-clip;
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-amber-900;
+}
