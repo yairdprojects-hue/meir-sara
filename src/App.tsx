@@ -18,7 +18,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/meir-sara/">
       <div className="flex min-h-screen min-w-0 max-w-full flex-col overflow-x-clip bg-orange-50">
         <ScrollToTop />
         <Navbar />
