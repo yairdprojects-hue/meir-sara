@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,7 +18,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Router basename="/meir-sara/">
+    <Router>
       <div className="flex min-h-screen min-w-0 max-w-full flex-col overflow-x-clip bg-orange-50">
         <ScrollToTop />
         <Navbar />
