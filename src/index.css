@@ -27,3 +27,74 @@ body {
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-amber-900;
 }
+
+/* ——— נגישות (כפתור נגישות) ——— */
+html[data-a11y-font-step="0"] {
+  font-size: 87.5%;
+}
+html[data-a11y-font-step="1"] {
+  font-size: 93.75%;
+}
+html[data-a11y-font-step="2"] {
+  font-size: 100%;
+}
+html[data-a11y-font-step="3"] {
+  font-size: 112.5%;
+}
+html[data-a11y-font-step="4"] {
+  font-size: 125%;
+}
+
+html[data-a11y-high-contrast="true"] body {
+  background-color: #ffffff !important;
+  color: #0a0a0a !important;
+}
+
+html[data-a11y-high-contrast="true"] a {
+  color: #0000c4 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+html[data-a11y-high-contrast="true"] .border-amber-300\/80,
+html[data-a11y-high-contrast="true"] .border-stone-200,
+html[data-a11y-high-contrast="true"] .border-stone-300 {
+  border-color: #000000 !important;
+}
+
+html[data-a11y-highlight-links="true"] a[href] {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+html[data-a11y-readable-font="true"] body {
+  font-family: "Assistant", system-ui, sans-serif !important;
+  letter-spacing: 0.03em;
+  word-spacing: 0.06em;
+}
+
+html[data-a11y-readable-font="true"] .font-serif,
+html[data-a11y-readable-font="true"] .font-display {
+  font-family: "Assistant", system-ui, sans-serif !important;
+}
+
+html[data-a11y-reduce-motion="true"] *,
+html[data-a11y-reduce-motion="true"] *::before,
+html[data-a11y-reduce-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

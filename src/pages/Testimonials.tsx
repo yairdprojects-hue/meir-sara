@@ -23,7 +23,7 @@ export default function Testimonials() {
     },
     {
       name: 'דני ושירה',
-      context: 'אירוע בוטיק קטן',
+      context: 'אירוח משפחתי',
       text: 'חיפשנו מקום אינטימי ויוקרתי לאירוע משפחתי. מאיר שרה סיפקה את כל הארוחות ברמה גבוהה והמרחב הרגיש פרטי ומכובד.',
       rating: 5,
     },
@@ -41,7 +41,7 @@ export default function Testimonials() {
     },
   ];
 
-  const eventTypes = ['שבתות חתן', 'אירועי בוטיק', 'לינה משפחתית', 'אירוח גורמט', 'חגים ושמחות'];
+  const eventTypes = ['שבתות חתן', 'שבתות גיבוש', 'לינה משפחתית', 'אירוח משפחתי', 'חגים ושמחות'];
 
   return (
     <div className="min-h-screen overflow-x-clip bg-orange-50 pt-24">

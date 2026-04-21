@@ -2,6 +2,8 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import AccessibilityToolbar from './components/AccessibilityToolbar';
+import UserWayWidget from './components/UserWayWidget';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -16,13 +18,29 @@ function ScrollToTop() {
   return null;
 }
 
+function SkipToMain() {
+  return (
+    <a
+      href="#main-content"
+      className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-[200] focus:inline-block focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-base focus:font-bold focus:text-stone-900 focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-600"
+    >
+      דלג לתוכן הראשי
+    </a>
+  );
+}
+
 export default function App() {
   return (
     <Router>
       <div className="flex min-h-screen min-w-0 max-w-full flex-col overflow-x-clip bg-orange-50">
         <ScrollToTop />
+        <SkipToMain />
         <Navbar />
-        <main className="min-w-0 max-w-full flex-grow overflow-x-clip">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="min-w-0 max-w-full flex-grow overflow-x-clip outline-none focus:outline-none"
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -32,6 +50,8 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <UserWayWidget />
+        <AccessibilityToolbar />
       </div>
     </Router>
   );
