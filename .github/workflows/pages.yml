@@ -1,9 +1,15 @@
-# פריסה סטטית בלי Jekyll — הגדרות Repo → Pages → Source: GitHub Actions
+# פריסה סטטית — Repo → Pages → Source: GitHub Actions
+#
+# Secrets: Settings → Secrets and variables → Actions
+# העדפה: Repository secrets (זמינים לכל ה-jobs). אם הוספתם רק ב-Environment של
+# github-pages, הוספנו כאן environment לבילד כדי שגם הם יעברו.
+
 name: Deploy site to Pages
 
 on:
   push:
     branches: ["main", "master"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,6 +23,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - uses: actions/checkout@v4
 
@@ -25,8 +33,19 @@ jobs:
           node-version: "22"
           cache: npm
 
-      - run: npm ci
-      - run: npm run build
+      # Vite טוען .env.production ב-bild — כך ה-VITE_* בטוחים נכנסים גם מ-Secrets
+      - name: Create .env.production for Vite
+        run: |
+          {
+            echo "VITE_FIREBASE_API_KEY=${VITE_FIREBASE_API_KEY}"
+            echo "VITE_FIREBASE_AUTH_DOMAIN=${VITE_FIREBASE_AUTH_DOMAIN}"
+            echo "VITE_FIREBASE_PROJECT_ID=${VITE_FIREBASE_PROJECT_ID}"
+            echo "VITE_FIREBASE_STORAGE_BUCKET=${VITE_FIREBASE_STORAGE_BUCKET}"
+            echo "VITE_FIREBASE_MESSAGING_SENDER_ID=${VITE_FIREBASE_MESSAGING_SENDER_ID}"
+            echo "VITE_FIREBASE_APP_ID=${VITE_FIREBASE_APP_ID}"
+            echo "VITE_FIREBASE_MEASUREMENT_ID=${VITE_FIREBASE_MEASUREMENT_ID}"
+            echo "VITE_USERWAY_ACCOUNT=${VITE_USERWAY_ACCOUNT}"
+          } > .env.production
         env:
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
@@ -36,6 +55,9 @@ jobs:
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
           VITE_USERWAY_ACCOUNT: ${{ secrets.VITE_USERWAY_ACCOUNT }}
+
+      - run: npm ci
+      - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
